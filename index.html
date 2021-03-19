@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Опасный груз</title>
+</head>
+<body>
+	<h1>Определение номера ООН раствора спирта Этилового</h1>
+
+	<form>
+		<div class="input-row">
+			<label for="alco">Содержание спирта</label>
+			<input type="number" name="alco" id="alco" placeholder="число в %"/>
+		</div>
+		<div class="input-row" id="hid" hidden>
+			<label for="flash">Температура вспышки</label>
+			<input type="number" name="flash" id="flash" placeholder="число в %"/>
+		</div>
+		<button>Вычислить</button>
+	</form>
+
+	<table>
+		<tbody>
+			<tr>
+				<td>Содержание спирта</td>
+				<td>Температура вспышки</td>
+				<td>Номер ООН</td>
+			</tr>
+		</tbody>
+	</table>
+
+    <script src="script.js"></script>
+</body>
+</html> 
