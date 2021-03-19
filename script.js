@@ -7,18 +7,29 @@ function isNeedVisibleFlash(e) {
 }
 
 function renderAdditionalCell() {
-    // alert('flash works')
     document.getElementById('hid').style.visibility = 'visible'
-    
+    return document.getElementById('flash').value
 }
 
 function getResult() {
-    const alco = document.getElementById('alco').value
-    const flash = document.getElementById('flash').value
+    const alco = document.getElementById('alco').value    
     if (isNeedVisibleFlash(alco)) {
-        renderAdditionalCell()
+        var flash = renderAdditionalCell()
     }
-    // alert(alco)
+    
+    const alcoCell = document.createElement('td')
+    const flashCell = document.createElement('td')
+
+    var textAlco = document.createTextNode(alco)
+    var textFlash = document.createTextNode(flash)
+
+    alcoCell.appendChild(textAlco)
+    const currentAlco = document.getElementById('trAlco')
+    document.body.insertBefore(alcoCell, currentAlco)
+
+    flashCell.appendChild(textFlash)
+    const currentFlash = document.getElementById('trFlash')
+    document.body.insertBefore(flashCell, currentFlash)
 }
 
 formEL.addEventListener('submit', getResult)
